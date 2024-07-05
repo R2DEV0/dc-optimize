@@ -36,6 +36,10 @@ function dc_register_settings() {
   // create new setting object: Spanish Post ID
   register_setting( 'dc_options', 'dc_spanish_post', 'dc_spanish_post_validate' );
   add_settings_field( 'dc_spanish_post', 'Spanish Post Id', 'dc_spanish_post_callback', 'dc_settings', 'dc' );
+
+  // create new setting object: Presenter Page ID
+  register_setting( 'dc_options', 'dc_presenter_post', 'dc_presenter_post_validate' );
+  add_settings_field( 'dc_presenter_post', 'Presenter Post Id', 'dc_presenter_post_callback', 'dc_settings', 'dc' );
 }
 add_action( 'admin_init', 'dc_register_settings' );
 
@@ -68,6 +72,10 @@ function dc_summit_post_validate( $value ) {
 }
 
 function dc_spanish_post_validate( $value ) {
+  return $value;
+}
+
+function dc_presenter_post_validate( $value ) {
   return $value;
 }
 
@@ -109,6 +117,11 @@ function dc_summit_post_callback() {
 function dc_spanish_post_callback() {
   $dc_spanish_post = get_option( 'dc_spanish_post' );
   echo '<input id="dc_spanish_post" name="dc_spanish_post" title="The post used to check if user is authorized to access DC Spanish" type="text" value="' . $dc_spanish_post . '" />';
+}
+
+function dc_presenter_post_callback() {
+  $dc_presenter_post = get_option( 'dc_presenter_post' );
+  echo '<input id="dc_presenter_post" name="dc_presenter_post" title="The post used to check if user is authorized to access DC presenter" type="text" value="' . $dc_presenter_post . '" />';
 }
 
 function dc_section_text() {

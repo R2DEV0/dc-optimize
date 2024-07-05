@@ -1,9 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: './public/index.jsx',
+  entry: {
+    index: './public/index.jsx',
+    index2: './public/index2.jsx'
+  },
   output: {
-    filename: 'index.bundle.js',
+    filename: '[name].bundle.js', // Use [name] placeholder to name the bundles according to the entry point
     path: path.resolve(__dirname, 'public', 'bundles'), // Make sure 'public' and 'bundles' directories exist
   },
   module: {

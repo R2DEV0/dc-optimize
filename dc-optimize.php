@@ -4,7 +4,7 @@
  * Plugin Name:     The Depth & Complexity Plugin
  * Plugin URI: 		  https://depthcomplexity.com
  * Description:     Custom addons and extensions for the Depth & the Complexity website
- * Version:         1.0.3.9
+ * Version:         1.0.4.0
  * Text Domain:     depthandcomplexity
  * Author:          Kevin Chancey
  * Author URI:      kevin@kevtech.net
@@ -23,6 +23,7 @@ require_once($dir_includes . 'DCOnline.php');
 require_once($dir_includes . 'CustomRCP.php');
 require_once($dir_includes . 'CustomWoo.php');
 require_once($dir_includes . 'UserTracking.php');
+require_once($dir_includes . 'DCSlides.php');
 
 add_action( 'plugins_loaded', function() {
   DC_Optimize\RestAPI::get_instance();
@@ -30,6 +31,7 @@ add_action( 'plugins_loaded', function() {
   DC_Optimize\CustomRCP::get_instance();
   DC_Optimize\CustomWoo::get_instance();
   DC_Optimize\UserTracking::get_instance();
+  DC_Optimize\DCSlides::get_instance();
 });
 
 ?>

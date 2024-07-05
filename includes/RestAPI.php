@@ -21,6 +21,6 @@ class RestAPI
 
     public function register_routes() : void
     {
-        
+
     }
 }
