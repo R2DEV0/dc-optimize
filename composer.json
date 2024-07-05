@@ -1,0 +1,13 @@
+{
+    "name": "your-vendor/your-plugin",
+    "description": "Your WordPress Plugin",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.19"
+        // Add other dependencies as needed
+    },
+    "autoload": {
+        "psr-4": {
+            "YourVendor\\YourPlugin\\": "src/"
+        }
+    }
+}
